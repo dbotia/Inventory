@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8/08/2014 10:24:12 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="model.pojo.Producto" table="producto" catalog="productows">
+        <id name="codigo" type="string">
+            <column name="codigo" length="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="30" />
+        </property>
+        <property name="precio" type="java.lang.Integer">
+            <column name="precio" />
+        </property>
+        <property name="stock" type="java.lang.Integer">
+            <column name="stock" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>
