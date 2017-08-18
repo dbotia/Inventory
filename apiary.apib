@@ -1,0 +1,115 @@
+FORMAT: 1A
+
+# Farmacia en Linea
+
+API para la interacción con el servicio de farmacia en linea
+
+## Sucursales
+
+Una farmacia tiene los siguientes atributos.
+
+- identificador de la sucursal
+- nombre de la sucursal
+- direccion
+- zona de la sucursal
+
+### Obtener todas las sucursales [GET /farmacia]
+
+Con este recurso se listan las principales sucursales
+
++ Response 200 (application/json)
+
+                {
+                    "sucursales": [
+                        {
+                            "idsucursal": 1,
+                            "nombre": "Drogas la rebaja",
+                            "direccion": "Cra 874 # 44",
+                            "zona": "Centro"
+                        }, {
+                            "idsucursal": 2,
+                            "nombre": "Farmacia Pasteur",
+                            "direccion": "Calle 100",
+                            "zona": "Norte"
+                        }, {
+                            "idsucursal": 3,
+                            "nombre": "Farmacia CAFAM",
+                            "direccion": "Cra 23 # 12",
+                            "zona": "Sur"
+                        }, {
+                            "idsucursal": 4,
+                            "nombre": "Drogstore",
+                            "direccion": "Calle 2 # 55",
+                            "zona": "Poniente"
+                        }, {
+                            "idsucursal": 5,
+                            "nombre": "Farmacia Sol Naciente",
+                            "direccion": "Cra 8 # 4",
+                            "zona": "Oriente"
+                        }
+                    ]
+                }
+ 
+### Obtener detalles de farmacia Centro [GET /farmacia/1]
+
++ Response 200 (application/json)
+
+                {
+                    "idsucursal": 1,
+                    "nombre": "Drogas la rebaja",
+                    "direccion": "Cra 874 # 44",
+                    "zona": "Centro"
+                }
+                
+### Obtener detalles de farmacia Norteo [GET /farmacia/2]
+
++ Response 200 (application/json)
+
+                {
+                  "idsucursal": 2,
+                  "nombre": "Farmacia Pasteur",
+                  "direccion": "Calle 100",
+                  "zona": "Norte"
+                }                
+                
+### Obtener detalles de farmacia Sur [GET /farmacia/3]
+
++ Response 200 (application/json)
+
+                {
+                 "idsucursal": 3,
+                 "nombre": "Farmacia CAFAM",
+                 "direccion": "Cra 23 # 12",
+                 "zona": "Sur"
+                }                
+                                
+### Obtener detalles de farmacia Poniente [GET /farmacia/4]
+
++ Response 200 (application/json)
+
+                {
+                  "idsucursal": 4,
+                  "nombre": "Drogstore",
+                  "direccion": "Calle 2 # 55",
+                  "zona": "Poniente"
+                }                
+
+### Crear Pedido [POST /farmacia/pedido]
+
++ Request (application/json)
+
+        [
+            {
+              "pedido": {
+                "idSucursal": "1",
+                "producto": "aspirina",
+                "cantidad": "3"
+              }
+            }
+        ]
+        
++ Response 200 (application/json)
+
+                {
+                    "mensaje": "Su pedido se ha colocado correctamente. Pronto le avisaremos en qué horario recogerlo"
+                }
